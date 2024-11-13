@@ -10,32 +10,41 @@ import SwiftUI
 struct HockeyCard: View {
     var body: some View {
         VStack{
-            Text ("Mitch Marner")
-                .font(.title).bold().scaledToFill()
             ZStack{
+                Color.blue.opacity(1.5)
+                    .aspectRatio(5,contentMode: .fill)
+                
+                Text ("Mitch Marner")
+                    .font(.title).bold().scaledToFit()
+            }
+            ZStack{
+                Color.blue.opacity(2.5)
+                    .aspectRatio(contentMode: .fill)
+                Color.blue.opacity(1.0)
+                    .padding()
                 Image(.mitchview)
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame (width: 400, height: 400, alignment: .topLeading)
-                            .border(.blue)
-                            .scaledToFill()
+                    .aspectRatio(1, contentMode: .fit)
                 HStack{
                     Spacer()
-                    VStack{
-                        Spacer()
-                        Image(.leafsVIew)
-                            
-                    }
-                    Text ("#16")
-                        .font(.headline)
                     Spacer()
+                    VStack{ Text("#16")
+                        font(.largeTitle).fontWeight(.black).minimumScaleFactor(0.9)
+                        Spacer()
+                    }
+                    
+                    
+                    
+                }
                 }
             }
+        HStack{
             Text("Toronto Maple Leafs")
+            Spacer()
+        }
             HStack{
                 VStack{
                     Text("Shoots: Right")
-                        .padding()
                     Text ("Position: Winger")
                     Text("Points-24/25: 85")
                     
@@ -51,8 +60,8 @@ struct HockeyCard: View {
             
         }
     }
-    
-}
+
+
 #Preview {
     HockeyCard()}
             
